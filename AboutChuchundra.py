@@ -23,6 +23,8 @@ def info(message):
     except Exception as e:
         New_Bot.reply_to("Ошибка: Ошибка при отправке сообщения :(")
 
+@New_Bot.message_handler(commands=['test'])
+def test(message):
+    New_Bot.send_message(message.chat.id, "This is test...")
 
 New_Bot.infinity_polling()
-
